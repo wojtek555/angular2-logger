@@ -1,0 +1,44 @@
+{
+  "name": "angular2-logger",
+  "version": "0.1.0",
+  "description": "A Log4j inspired Logger for Angular 2.",
+  "main": "logger.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-chunks/angular2-logger"
+  },
+  "scripts": {
+    "postinstall": "typings install"
+  },
+  "keywords": [
+    "angular2",
+    "logger",
+    "log4j",
+    "log4js",
+    "typescript"
+  ],
+  "author": "Armando Garcia Moran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/code-chunks/angular2-logger/issues"
+  },
+  "homepage": "https://github.com/code-chunks/angular2-logger#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.5.15",
+    "typescript": "^1.8.2",
+    "typings":"^0.6.8"
+  },
+  "peerDependencies": {
+    "angular2": "^2.0.0-beta.8",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.5.15"
+  }
+}
