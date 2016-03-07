@@ -1,6 +1,6 @@
 {
   "name": "angular2-logger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Log4j inspired Logger for Angular 2.",
   "main": "logger.js",
   "repository": {
@@ -31,7 +31,7 @@
     "rxjs": "5.0.0-beta.2",
     "zone.js": "0.5.15",
     "typescript": "^1.8.2",
-    "typings":"^0.6.8"
+    "typings": "^0.6.8"
   },
   "peerDependencies": {
     "angular2": "^2.0.0-beta.8",
