@@ -2,3 +2,5 @@
 #idea project config files.
 .idea
 *.iml
+
+tsconfig.json
