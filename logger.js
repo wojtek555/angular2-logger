@@ -1,4 +1,4 @@
-System.register(['./src/logger'], function(exports_1) {
+System.register(["./src/logger"], function(exports_1) {
     function exportStar_1(m) {
         var exports = {};
         for(var n in m) {

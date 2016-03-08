@@ -74,7 +74,8 @@ export class Logger{
         this._globalAs = globalAs;
         this._storeAs = storeAs;
 
-        if( global ) this.global();
+        global && this.global();
+
         if( store || this._loadLevel() ) this.store();
 
     }
@@ -104,7 +105,7 @@ export class Logger{
 
     global = () => window[this._globalAs] = this;
 
-    store = ():Logger => {
+    store():Logger {
 
         this._store = true;
 
@@ -114,7 +115,7 @@ export class Logger{
 
         return this;
 
-    };
+    }
 
     unstore():Logger{
         this._store = false;
@@ -122,16 +123,16 @@ export class Logger{
         return this;
     }
 
-    isErrorEnabled(){ return this.level >= Level.ERROR; }
-    isWarnEnabled(){ return this.level >= Level.WARN; }
-    isInfoEnabled(){ return this.level >= Level.INFO; }
-    isDebugEnabled(){ return this.level >= Level.DEBUG; }
-    isLogEnabled(){ return this.level >= Level.LOG; }
+    isErrorEnabled = () => this.level >= Level.ERROR;
+    isWarnEnabled = () => this.level >= Level.WARN;
+    isInfoEnabled = () => this.level >= Level.INFO;
+    isDebugEnabled = () => this.level >= Level.DEBUG;
+    isLogEnabled = () => this.level >= Level.LOG;
 
     get level():Level{ return this._level; }
 
     set level(level:Level){
-        if(this._store) this._storeLevel(level);
+        this._store && this._storeLevel(level);
         this._level = level;
     }
 
