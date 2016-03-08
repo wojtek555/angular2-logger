@@ -147,6 +147,8 @@ Note: Class Names like Options and Level might be too common, if you get a confl
 ## TODO
 
 - Support different loaders and modes.
+- Support named loggers.
+- No coding required Dashboard UI to handle loggers. 
 
 ## LICENSE
 
