@@ -83,23 +83,23 @@ export class Logger{
     private _loadLevel = ():Level => localStorage.getItem( this._storeAs );
     private _storeLevel(level:Level){ localStorage[ this._storeAs ] = level; }
 
-    error(message?: any, ...optionalParams: any[]):void{
+    error(message?: any, ...optionalParams: any[]){
         this.isErrorEnabled() && console.error( message, ...optionalParams );
     }
 
-    warn(message?: any, ...optionalParams: any[]):void{
+    warn(message?: any, ...optionalParams: any[]){
         this.isWarnEnabled() && console.warn( message, ...optionalParams );
     }
 
-    info(message?: any, ...optionalParams: any[]):void{
+    info(message?: any, ...optionalParams: any[]){
         this.isInfoEnabled() && console.info( message, ...optionalParams );
     }
 
-    debug(message?: any, ...optionalParams: any[]):void{
+    debug(message?: any, ...optionalParams: any[]){
         this.isDebugEnabled() && console.debug( message, ...optionalParams );
     }
 
-    log(message?: any, ...optionalParams: any[]):void{
+    log(message?: any, ...optionalParams: any[]){
         this.isLogEnabled() && console.log( message, ...optionalParams );
     }
 
