@@ -1,6 +1,7 @@
 # Angular2-Logger
 
 [![Join the chat at https://gitter.im/code-chunks/angular2-logger](https://badges.gitter.im/code-chunks/angular2-logger.svg)](https://gitter.im/code-chunks/angular2-logger?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Support](https://supporter.60devs.com/api/b/cjv93jwfwck3yp8z2mn1d9gay)](https://supporter.60devs.com/give/cjv93jwfwck3yp8z2mn1d9gay)
 
 ## What is it?
 
