@@ -7,9 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/code-chunks/angular2-logger"
   },
-  "scripts": {
-    "postinstall": "typings install"
-  },
+  "scripts": {},
   "keywords": [
     "angular2",
     "logger",
