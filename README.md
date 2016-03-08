@@ -25,7 +25,7 @@ Setup the Provider.
    
     bootstrap( App, [ Logger ]); 
 
-Add `angular2-logger` to your `Systemjs` configuration.
+Add `angular2-logger` to your `Systemjs` configuration.*
 If you are following the [Angular 2's Quickstart Guide](https://angular.io/docs/ts/latest/quickstart.html) it should be something like this:
 
     System.config({
@@ -147,8 +147,11 @@ Note: Class Names like Options and Level might be too common, if you get a confl
 ## TODO
 
 - Support different loaders and modes.
+- Ability to add logging time to the messages.
 - Support named loggers.
-- No coding required Dashboard UI to handle loggers. 
+- No coding required Dashboard UI to handle loggers.
+
+*This step is only temporary until future, hopefully soon, improvements.
 
 ## LICENSE
 
