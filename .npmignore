@@ -16,3 +16,5 @@ typings
 *.iml
 
 tsconfig.json
+
+.travis.yml
