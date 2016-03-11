@@ -107,11 +107,15 @@ The available configuration options are:
 
     The Hierarchy of the messages is as follows from highest to lowest priority:
 
-     1. `Level.ERROR`
-     2. `Level.WARN`
-     3. `Level.INFO`
-     4. `Level.DEBUG`
-     5. `Level.LOG`
+     1.- `Level.ERROR`
+
+     2.- `Level.WARN`
+
+     3.- `Level.INFO`
+
+     4.- `Level.DEBUG`
+
+     5.- `Level.LOG`
 
      The Logger will log everything with higher or equal priority to the current `logger.level` set.
 
@@ -149,11 +153,12 @@ Class names like `Options` and `Level` might be too common, if you get a conflic
 Filing issues is helpful but **pull requests** that improve the docs are even better!
 
 
-## TODO
-
+## TODOs
 - Support different loaders and modes.
 - Ability to add logging time to the messages.
-- Appenders
+- Lazy Logging.
+- Appenders.
+- Unit Testing.
 - Support named loggers.
 - No coding required Dashboard UI to handle loggers.
 
