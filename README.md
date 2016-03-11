@@ -8,9 +8,9 @@
 
 ## What is it?
 
-A simpler [Log4j](http://logging.apache.org/log4j/2.x/) inspired logger module for [Angular 2](https://angular.io/). Think of it as "Log4ng" ... get it?
+A simpler **[Log4j](http://logging.apache.org/log4j/2.x/)** inspired logger module for **[Angular 2](https://angular.io/)**. Think of it as "**Log4ng**" ... get it?
 
-This is a work in progress and is not quite yet ready for production, use with care.
+This is a work in progress and is not ready for production, use with care, the API can and **will** change.
 
 ## Usage
 
@@ -145,10 +145,15 @@ Class names like `Options` and `Level` might be too common, if you get a conflic
             level: LoggerLevel.WARN,
             ...
 
+## How you can help
+Filing issues is helpful but **pull requests** that improve the docs are even better!
+
+
 ## TODO
 
 - Support different loaders and modes.
 - Ability to add logging time to the messages.
+- Appenders
 - Support named loggers.
 - No coding required Dashboard UI to handle loggers.
 
