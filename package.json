@@ -9,10 +9,10 @@
   },
   "scripts": {},
   "keywords": [
-    "angular2", "angular2-logger",
+    "angular2", "angular 2","angular2-logger",
     "logger", "logging", "console", "logmanager", "log manager",
     "log", "debug", "trace", "error", "info", "warn", "warning", "fatal",
-    "log4j", "log4jng", "log4js",
+    "log4j", "log4ng", "log4js", 
     "typescript"
   ],
   "author": "Armando Garcia Moran",
