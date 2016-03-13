@@ -6,7 +6,7 @@ import {Injectable, Optional, provide} from "angular2/core";
  * See {@link Logger}.
  *
  */
-export enum Level{ ERROR = 1, WARN = 2, INFO = 3, DEBUG = 4, LOG = 5 }
+export enum Level{ OFF = 0, ERROR = 1, WARN = 2, INFO = 3, DEBUG = 4, LOG = 5}
 
 /**
  * Logger options.
@@ -108,7 +108,6 @@ export class Logger{
     store():Logger {
 
         this._store = true;
-
         let storedLevel = this._loadLevel();
         if( storedLevel ){ this._level = storedLevel }
         else{ this._storeLevel( this.level ) }
@@ -142,6 +141,7 @@ export class Logger{
  * Custom Providers if the user wants to avoid some configuration for common scenarios.
  * @type {Provider|Logger[]}
  */
+export const OFF_LOGGER_PROVIDERS:any[] = [ provide( Options, { useValue: { level: Level.OFF } } ), Logger ];
 export const ERROR_LOGGER_PROVIDERS:any[] = [ provide( Options, { useValue: { level: Level.ERROR } } ), Logger ];
 export const WARN_LOGGER_PROVIDERS:any[] = [ provide( Options, { useValue: { level: Level.WARN } } ), Logger ];
 export const INFO_LOGGER_PROVIDERS:any[] = [ provide( Options, { useValue: { level: Level.INFO } } ), Logger ];

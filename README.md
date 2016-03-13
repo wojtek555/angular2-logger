@@ -81,6 +81,7 @@ In order to see all of the messages you just need to change the logger message h
         INFO_LOGGER_PROVIDERS
         DEBUG_LOGGER_PROVIDERS
         LOG_LOGGER_PROVIDERS
+        OFF_LOGGER_PROVIDERS
 
 Note: If you change the level of the Logger dynamically, that setting will be lost upon refreshing the page and set back to its default configured setting.
 If you want the logger to keep this setting changed, store it in the localStorage by doing:
@@ -106,6 +107,8 @@ The available configuration options are:
 * `level:Level` - How much detail you want to see in the logs; `Level.ERROR` (1) being the less detailed and `Level.LOG` (5) being the most. Defaults to `Level.WARN` (2).
 
     The Hierarchy of the messages is as follows from highest to lowest priority:
+
+     0.- `Level.OFF`
 
      1.- `Level.ERROR`
 
@@ -154,6 +157,7 @@ Filing issues is helpful but **pull requests** that improve the docs are even be
 
 
 ## TODOs
+- <del>Add an off level that turns off the logger</del>
 - Support different loaders and modes.
 - Ability to add logging time to the messages.
 - Lazy Logging.
