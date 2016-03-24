@@ -11,7 +11,15 @@ typings
 # Optional REPL history
 .node_repl_history
 
-**/*.js
-**/*.js.map
+dist
+bundles
+
+*.js
+*.js.map
+*.d.ts
+
+app/**/*.js
+app/**/*.js.map
+app/**/*.d.ts
 
 .idea/workspace.xml

@@ -1,14 +1,23 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
-    "target": "es5",
-    "module": "system",
-    "moduleResolution": "node",
-    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": true,
-    "noImplicitAny": false
+    "rootDir": "../",
+    "module": "system",
+    "sourceMap": true,
+    "target": "es5",
+    "outFile": "bundles/angular2-logger.js",
+    "moduleResolution": "node",
+    "removeComments": true
   },
+  //TODO: Change this when https://github.com/Microsoft/TypeScript/issues/1927 gets implemented.
+  "files": [
+    "core",
+    "app/core/level",
+    "app/core/logger",
+    "typings/browser"
+  ],
   "exclude": [
     "node_modules",
     "typings/main",

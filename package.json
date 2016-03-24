@@ -7,10 +7,28 @@
     "type": "git",
     "url": "git+https://github.com/code-chunks/angular2-logger"
   },
-  "scripts": {},
+  "scripts": {
+    "tsc": "tsc",
+    "typings": "typings",
+    "tslint": "tslint *.ts src/**/*.ts",
+    "lint": "npm run tslint",
+    "prepublish": "npm run build",
+    "clean": "rimraf *.js *.js.map *.d.ts app/**/*.js app/**/*.js.map app/**/*.d.ts dist bundles",
+    "precompile": "typings install",
+    "compile": "npm run compile:cjs && npm run compile:es6",
+    "compile:cjs": "tsc -t ES5 --sourceMap --experimentalDecorators --emitDecoratorMetadata --moduleResolution node --declaration core.ts typings/browser",
+    "compile:es6": "tsc -t ES6 --sourceMap --experimentalDecorators --emitDecoratorMetadata --moduleResolution node core.ts --outDir dist/es6",
+    "pretest": "npm run lint",
+    "test": "echo tests pending...",
+    "prebuild": "npm run clean && npm run compile && npm run test",
+    "build": "echo minify pending... && echo Build Successful."
+  },
   "keywords": [
+    "angular",
     "angular2",
     "angular 2",
+    "ng",
+    "ng2",
     "angular2-logger",
     "logger",
     "logging",
@@ -33,6 +51,10 @@
   "author": "Armando Garcia Moran",
   "contributors": [
     {
+      "name": "Armando Garcia",
+      "email": "langley.agm@gmail.com"
+    },
+    {
       "name": "Juan Hernandez",
       "email": "juanhersan@gmail.com"
     }
@@ -43,8 +65,20 @@
   },
   "homepage": "https://github.com/code-chunks/angular2-logger#readme",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "angular2": "^2.0.0-beta.12",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "0.1.2",
+    "rimraf": "^2.5.2",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "0.19.24",
+    "tslint": "^3.6.0-dev.1",
+    "typescript": "^1.8.9",
+    "typings": "^0.7.8",
+    "zone.js": "0.6.6"
+  },
   "peerDependencies": {
-    "angular2": "^2.0.0-beta.8"
+    "angular2": "^2.0.0-beta.12"
   }
 }
