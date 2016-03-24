@@ -29,6 +29,10 @@ Setup the Provider.
 Add the `angular2-logger` library to your app.
 If you are following the [Angular 2's Quickstart Guide](https://angular.io/docs/ts/latest/quickstart.html) it should be something like this:
 
+    <!-- IE required polyfills, in this exact order -->
+    ...
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <!-- Add the following line to the list of scripts: -->
     <script src="node_modules/angular2-logger/bundles/angular2-logger.js"></script>
 
 Inject the logger into your objects and use it.
@@ -141,10 +145,10 @@ Class names like `Options` and `Level` might be too common, if you get a conflic
             ...
 
 ## How you can help
-Filing issues is helpful but **pull requests** that improve the docs are even better!
+Filing issues is helpful but **pull requests** are even better!
 
 ## Instructions for dev environment
-They are long so try to keep up, here we go:
+They are too long so try to keep up, here we go:
 
     git clone https://github.com/code-chunks/angular2-logger.git
 
