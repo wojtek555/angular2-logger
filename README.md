@@ -162,7 +162,6 @@ Done.
 - Ability to add logging time to the messages.
 - Lazy Logging.
 - Appenders.
-- Add polyfill for Object.assign.
 - Unit Testing.
 - Support named loggers.
 - Message Layout Feature.
