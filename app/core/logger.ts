@@ -39,7 +39,7 @@ export class Logger {
     private _store: boolean;
     private _storeAs: string;
 
-    Level = Level;
+    Level:any = Level;
 
     constructor( @Optional() options?: Options ) {
 
@@ -79,7 +79,7 @@ export class Logger {
         this.isLogEnabled() && console.log( message, ...optionalParams );
     }
 
-    global = () => window[this._globalAs] = this;
+    global = () => ( <any> window )[this._globalAs] = this;
 
     store(): Logger {
 
