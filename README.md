@@ -21,7 +21,7 @@ This is a work in progress and is not ready for production, use with care, the A
 		npm install --save angular2-logger
 
 2. Add the `angular2-logger` library to your app.
-If you are following the [Angular 2's Quickstart Guide](https://angular.io/docs/ts/latest/quickstart.html) it should be something like this:
+	If you are following the [Angular 2's Quickstart Guide](https://angular.io/docs/ts/latest/quickstart.html) it should be something like this:
 
 		<!-- IE required polyfills, in this exact order -->
 		...
@@ -29,7 +29,7 @@ If you are following the [Angular 2's Quickstart Guide](https://angular.io/docs/
 		<!-- Add the following line to the list of scripts: -->
 		<script src="node_modules/angular2-logger/bundles/angular2-logger.js"></script>
 
-Note: `angular2-logger/bundles/angular2-logger.min.js` is also available for use in production.
+	Note: `angular2-logger/bundles/angular2-logger.min.js` is also available for use in production.
 
 3. Setup the Provider.
 
