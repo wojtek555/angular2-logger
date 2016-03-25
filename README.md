@@ -16,41 +16,41 @@ This is a work in progress and is not ready for production, use with care, the A
 
 ### Quicktart
 
-Install the npm module.
+1. Install the npm module.
     
-    npm install --save angular2-logger
+		npm install --save angular2-logger
 
-Setup the Provider.
-
-    import {Logger} from "angular2-logger/logger";
-   
-    bootstrap( App, [ Logger ]); 
-
-Add the `angular2-logger` library to your app.
+2. Add the `angular2-logger` library to your app.
 If you are following the [Angular 2's Quickstart Guide](https://angular.io/docs/ts/latest/quickstart.html) it should be something like this:
 
-    <!-- IE required polyfills, in this exact order -->
-    ...
-    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-    <!-- Add the following line to the list of scripts: -->
-    <script src="node_modules/angular2-logger/bundles/angular2-logger.js"></script>
+		<!-- IE required polyfills, in this exact order -->
+		...
+		<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+		<!-- Add the following line to the list of scripts: -->
+		<script src="node_modules/angular2-logger/bundles/angular2-logger.js"></script>
 
 Note: `angular2-logger/bundles/angular2-logger.min.js` is also available for use in production.
 
-Inject the logger into your objects and use it.
+3. Setup the Provider.
 
-    @Component({
-        ...
-    })
-    export class App(){
-        constructor(private _logger:Logger){
-            this._logger.error('This is a priority level 1 error message...');
-            this._logger.warn('This is a priority level 2 warning message...');
-            this._logger.info('This is a priority level 3 warning message...');
-            this._logger.debug('This is a priority level 4 debug message...');
-            this._logger.log('This is a priority level 5 log message...');
-        }
-    }
+        import {Logger} from "angular2-logger/core";
+
+        bootstrap( App, [ Logger ]);
+
+4. Inject the logger into your objects and use it.
+
+		@Component({
+			...
+		})
+		export class App(){
+			constructor(private _logger:Logger){
+				this._logger.error('This is a priority level 1 error message...');
+				this._logger.warn('This is a priority level 2 warning message...');
+				this._logger.info('This is a priority level 3 warning message...');
+				this._logger.debug('This is a priority level 4 debug message...');
+				this._logger.log('This is a priority level 5 log message...');
+			}
+		}
     
 By default the logger level will be set to `Level.WARN`, so you'll only see Warning and Error messages. 
 
@@ -86,7 +86,7 @@ If you want the logger to keep this setting changed, store it in the localStorag
 
 If the Providers included don't meet your needs you can configure the default logger configuration by Providing custom properties:
 
-    import { Logger, Options, Level } from "angular2-logger/logger";
+    import { Logger, Options, Level } from "angular2-logger/core";
 
     bootstrap(AppComponent,[
         //<Options> casting is optional, it'll help you with type checking if using an IDE.
@@ -139,7 +139,7 @@ You can also override the default configuration options by extending the Options
 
 Class names like `Options` and `Level` might be too common, if you get a conflict you can rename them like this:
 
-    import { Logger, Options as LoggerOptions, Level as LoggerLevel } from "angular2-logger/logger";
+    import { Logger, Options as LoggerOptions, Level as LoggerLevel } from "angular2-logger/core";
 
     bootstrap(AppComponent,[
         provide( LoggerOptions,{ useValue: {
@@ -171,6 +171,9 @@ Done.
 - Support named loggers.
 - Message Layout Feature.
 - No coding required Dashboard UI to handle loggers.
+
+## Breaking changes on 0.2.0
+The setup changed a bit to make it easier so make sure you follow up the new Quickstart.
 
 ## LICENSE
 
