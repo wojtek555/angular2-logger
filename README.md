@@ -14,7 +14,7 @@ This is a work in progress and is not ready for production, use with care, the A
 
 ## Usage
 
-### Quicktart
+### Quickstart
 
 1. Install the npm module.
     
