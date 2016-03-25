@@ -11,7 +11,7 @@ import {Logger, Level} from "angular2-logger/core";
         
         <button (click)="setLevel( Level.OFF )"> Off </button>
         <button (click)="setLevel( Level.ERROR )"> Error </button>
-        <button (click)="setLevel( Level.WARNING )"> Warning </button>
+        <button (click)="setLevel( Level.WARN )"> Warning </button>
         <button (click)="setLevel( Level.INFO )"> Info </button>
         <button (click)="setLevel( Level.DEBUG )"> Debug </button>
         <button (click)="setLevel( Level.LOG )"> Log </button>
