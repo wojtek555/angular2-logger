@@ -60,23 +60,23 @@ export class Logger {
     private _storeLevel(level: Level) { localStorage[ this._storeAs ] = level; }
 
     error(message?: any, ...optionalParams: any[]) {
-        this.isErrorEnabled() && console.error( message, ...optionalParams );
+        this.isErrorEnabled() && console.error.apply( console, arguments );
     }
 
     warn(message?: any, ...optionalParams: any[]) {
-        this.isWarnEnabled() && console.warn( message, ...optionalParams );
+        this.isWarnEnabled() && console.warn.apply( console, arguments );
     }
 
     info(message?: any, ...optionalParams: any[]) {
-        this.isInfoEnabled() && console.info( message, ...optionalParams );
+        this.isInfoEnabled() && console.info.apply( console, arguments );
     }
 
     debug(message?: any, ...optionalParams: any[]) {
-        this.isDebugEnabled() && console.debug( message, ...optionalParams );
+        this.isDebugEnabled() && console.debug.apply( console, arguments );
     }
 
     log(message?: any, ...optionalParams: any[]) {
-        this.isLogEnabled() && console.log( message, ...optionalParams );
+        this.isLogEnabled() && console.log.apply( console, arguments );
     }
 
     global = () => ( <any> window )[this._globalAs] = this;
