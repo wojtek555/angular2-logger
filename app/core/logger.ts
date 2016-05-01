@@ -1,5 +1,5 @@
 import {Injectable, Optional} from "angular2/core";
-import {Level} from "./level.ts";
+import {Level} from "./level";
 
 /**
  * Logger options.

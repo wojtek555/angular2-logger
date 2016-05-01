@@ -28,18 +28,16 @@
     "postbuild": "echo Build Successful."
   },
   "keywords": [
-    "angular",
+    "log",
     "angular2",
-    "angular 2",
-    "ng",
-    "ng2",
-    "angular2-logger",
     "logger",
-    "logging",
+    "angular 2",
+    "angular2-logger",
     "console",
+    "ng2",
+    "logging",
     "logmanager",
     "log manager",
-    "log",
     "debug",
     "trace",
     "error",
@@ -50,7 +48,9 @@
     "log4j",
     "log4ng",
     "log4js",
-    "typescript"
+    "typescript",
+    "ng",
+    "angular"
   ],
   "author": "Armando Garcia Moran",
   "contributors": [

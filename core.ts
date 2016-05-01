@@ -7,7 +7,7 @@ import {Level} from "./app/core/level";
  * @description
  * Public API.
  */
-export * from "./app/core/level.ts";
+export * from "./app/core/level";
 export * from "./app/core/logger";
 
 /**
