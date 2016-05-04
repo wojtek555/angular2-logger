@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {Logger, Level} from "angular2-logger/core";
 
 @Component({

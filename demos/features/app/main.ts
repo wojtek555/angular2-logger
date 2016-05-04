@@ -1,4 +1,4 @@
-import {bootstrap} from 'angular2/platform/browser';
+import {bootstrap} from '@angular/platform-browser-dynamic';
 import {LoggerAppComponent} from "./logger-app.component";
 import {Logger} from "angular2-logger/core";
 
