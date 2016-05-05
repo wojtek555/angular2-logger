@@ -171,6 +171,11 @@ Done.
 - Message Layout Feature.
 - No coding required Dashboard UI to handle loggers.
 
+## Breaking changes on 0.3.0
+The codebase was updated to handle the breaking changes on Angular2's Release Candidate.
+
+**Make sure you don't upgrade to this version if you haven't upgraded Angular2 to at least `2.0.0-rc.0`**
+
 ## Breaking changes on 0.2.0
 The setup changed a bit to make it easier so make sure you follow up the new Quickstart.
 
