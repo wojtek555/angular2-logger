@@ -14,9 +14,9 @@ typings
 dist
 bundles
 
-*.js
-*.js.map
-*.d.ts
+/*.js
+/*.js.map
+/*.d.ts
 
 app/**/*.js
 app/**/*.js.map
