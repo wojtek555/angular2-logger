@@ -17,11 +17,10 @@
     "core",
     "app/core/level",
     "app/core/logger",
-    "typings/browser"
+    "typings/index"
   ],
   "exclude": [
     "node_modules",
-    "typings/main",
-    "typings/main.d.ts"
+    "typings/globals"
   ]
 }

@@ -19,7 +19,7 @@
     "precompile": "typings install",
     "compile": "npm run compile:bundle && npm run compile:cjs && npm run compile:es6",
     "compile:bundle": "tsc",
-    "compile:cjs": "tsc -t ES5 --sourceMap --experimentalDecorators --emitDecoratorMetadata --moduleResolution node --declaration core.ts typings/browser",
+    "compile:cjs": "tsc -t ES5 --sourceMap --experimentalDecorators --emitDecoratorMetadata --moduleResolution node --declaration core.ts typings/index",
     "compile:es6": "tsc -t ES6 --sourceMap --experimentalDecorators --emitDecoratorMetadata --moduleResolution node core.ts --outDir dist/es6",
     "pretest": "npm run lint",
     "test": "echo tests pending...",
