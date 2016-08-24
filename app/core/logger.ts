@@ -22,6 +22,9 @@ export class Options {
     storeAs: string;
 }
 
+// For browsers that don't implement the debug method, log will be used instead. Fixes #62.
+const CONSOLE_DEBUG_METHOD = console["debug"] ? "debug" : "log";
+
 // Temporal until https://github.com/angular/angular/issues/7344 gets fixed.
 const DEFAULT_OPTIONS: Options = {
     level: Level.WARN,
@@ -39,7 +42,7 @@ export class Logger {
     private _store: boolean;
     private _storeAs: string;
 
-    Level:any = Level;
+    Level: any = Level;
 
     constructor( @Optional() options?: Options ) {
 
@@ -72,7 +75,7 @@ export class Logger {
     }
 
     debug(message?: any, ...optionalParams: any[]) {
-        this.isDebugEnabled() && console.debug.apply( console, arguments );
+        this.isDebugEnabled() && ( <any> console )[ CONSOLE_DEBUG_METHOD ].apply( console, arguments );
     }
 
     log(message?: any, ...optionalParams: any[]) {
