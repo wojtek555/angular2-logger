@@ -2,7 +2,7 @@
   "name": "angular2-logger",
   "version": "0.3.0",
   "description": "A Log4j inspired Logger for Angular 2.",
-  "main": "logger.js",
+  "main": "bundles/angular-logger.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/code-chunks/angular2-logger"
@@ -13,18 +13,20 @@
     "uglifyjs": "uglifyjs",
     "tslint": "tslint *.ts src/**/*.ts",
     "lint": "npm run tslint",
-    "minify": "uglifyjs -o bundles/angular2-logger.min.js bundles/angular2-logger.js",
     "prepublish": "npm run build",
-    "clean": "rimraf *.js *.js.map *.d.ts app/**/*.js app/**/*.js.map app/**/*.d.ts dist bundles",
+    "clean": "rimraf *.js *.map *.d.ts app/**/*.js app/**/*.map app/**/*.d.ts demos/*/app**/*.js demos/*/app/*.map demos/*/app/*.d.ts dist bundles",
     "precompile": "typings install",
-    "compile": "npm run compile:bundle && npm run compile:cjs && npm run compile:es6",
-    "compile:bundle": "tsc",
-    "compile:cjs": "tsc -t ES5 --sourceMap --experimentalDecorators --emitDecoratorMetadata --moduleResolution node --declaration core.ts typings/index",
-    "compile:es6": "tsc -t ES6 --sourceMap --experimentalDecorators --emitDecoratorMetadata --moduleResolution node core.ts --outDir dist/es6",
+    "compile": "npm run compile:es5 && npm run compile:sys && npm run compile:es6",
+    "compile:amd": "tsc -p tsconfig-amd.json",
+    "compile:sys": "tsc -p tsconfig-sys.json",
+    "compile:es5": "tsc -p tsconfig-es5.json",
+    "compile:es6": "tsc -p tsconfig-es6.json",
+    "compile:es2015": "tsc -p tsconfig-es2015.json",
     "pretest": "npm run lint",
     "test": "echo tests pending...",
     "prebuild": "npm run clean && npm run compile && npm run test",
     "build": "npm run minify",
+    "minify": "uglifyjs -o bundles/angular2-logger.sys.min.js bundles/angular2-logger.sys.js",
     "postbuild": "echo Build Successful."
   },
   "keywords": [
@@ -70,28 +72,31 @@
   "homepage": "https://github.com/code-chunks/angular2-logger#readme",
   "dependencies": {},
   "devDependencies": {
-    "@angular/common": "^2.0.0-rc.1",
-    "@angular/compiler": "^2.0.0-rc.1",
-    "@angular/core": "^2.0.0-rc.1",
-    "@angular/platform-browser": "^2.0.0-rc.1",
-    "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
-    "es6-promise": "^3.0.2",
-    "es6-shim": "^0.35.0",
-    "zone.js": "^0.6.12",
-    "reflect-metadata": "0.1.8",
+
     "rimraf": "^2.5.2",
-    "systemjs": "0.19.37",
     "tslint": "^3.8.1",
-    "typescript": "^1.8.9",
+    "typescript": "1.8.10",
     "typings": "^1.0.3",
     "uglify-js": "^2.6.2",
-    "rxjs": "5.0.0-beta.6"
+
+    "@angular/common": "2.0.0-rc.5",
+    "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/platform-browser": "2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.5",
+
+    "systemjs": "0.19.37",
+    "core-js": "^2.4.0",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "zone.js": "^0.6.12"
+
   },
   "peerDependencies": {
-    "@angular/common": "^2.0.0-rc.1",
-    "@angular/compiler": "^2.0.0-rc.1",
-    "@angular/core": "^2.0.0-rc.1",
-    "@angular/platform-browser": "^2.0.0-rc.1",
-    "@angular/platform-browser-dynamic": "^2.0.0-rc.1"
+    "@angular/common": "2.0.0-rc.5",
+    "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/platform-browser": "2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.5"
   }
 }

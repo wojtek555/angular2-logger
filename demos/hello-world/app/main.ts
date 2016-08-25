@@ -1,7 +1,5 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {HelloWorldComponent}   from './hello-world.component';
-import {Logger} from "angular2-logger/core";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-bootstrap(HelloWorldComponent,[
-    Logger
-]);
+import { AppModule } from './app.module';
+
+platformBrowserDynamic().bootstrapModule( AppModule );

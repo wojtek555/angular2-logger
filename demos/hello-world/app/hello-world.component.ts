@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component} from "@angular/core";
 import {Logger} from "angular2-logger/core";
 
 @Component({
@@ -11,7 +11,7 @@ import {Logger} from "angular2-logger/core";
 })
 export class HelloWorldComponent{
 
-    constructor(private _logger:Logger){}
+    constructor( private _logger: Logger ){}
 
     logMsgs(){
         this._logger.error('This is a priority level 1 error message...');

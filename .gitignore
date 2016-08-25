@@ -22,4 +22,8 @@ app/**/*.js
 app/**/*.js.map
 app/**/*.d.ts
 
+demos/*/app/**/*.js
+demos/*/app/**/*.map
+demos/*/app/**/*.d.ts
+
 .idea/workspace.xml

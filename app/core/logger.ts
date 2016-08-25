@@ -42,7 +42,7 @@ export class Logger {
     private _store: boolean;
     private _storeAs: string;
 
-    Level: any = Level;
+    public Level: any = Level;
 
     constructor( @Optional() options?: Options ) {
 

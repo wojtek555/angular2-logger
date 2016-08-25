@@ -22,19 +22,42 @@ This is a work in progress and is not ready for production, use with care, the A
 
 2. Add the `angular2-logger` library to your app. If you are following the [Angular 2's Quickstart Guide](https://angular.io/docs/ts/latest/quickstart.html) it should be something like this:
 
-		<!-- IE required polyfills, in this exact order -->
-		...
-		<script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-		<!-- Add the following line to the list of scripts: -->
-		<script src="node_modules/angular2-logger/bundles/angular2-logger.js"></script>
-		<!-- angular2-logger/bundles/angular2-logger.min.js` is also available for use in production. -->
-
+In `systemjs.config.js`:
+ 
+    // map tells the System loader where to look for things
+    var map = {
+        'app':                        'app', // 'dist',
+        '@angular':                   'node_modules/@angular',
+        'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
+        'rxjs':                       'node_modules/rxjs',
+        'angular2-logger':            'node_modules/angular2-logger' // ADD THIS
+    };
+    
+    //packages tells the System loader how to load when no filename and/or no extension
+    var packages = {
+        'app':                        { main: 'main.ts',  defaultExtension: 'ts' },
+        'rxjs':                       { defaultExtension: 'js' },
+        'angular2-in-memory-web-api': { defaultExtension: 'js' },
+        'angular2-logger':            { defaultExtension: 'js' }, // AND THIS
+    };
 
 3. Setup the Provider.
+    
+    In `app.module.ts`:
+    
 
-        import {Logger} from "angular2-logger/core";
+    import { NgModule }      from '@angular/core';
+    import { BrowserModule } from '@angular/platform-browser';
+    import { HelloWorldComponent }  from './app.component';
+    import { Logger } from "angular2-logger/core"; // ADD THIS
 
-        bootstrap( App, [ Logger ]);
+    @NgModule({
+        imports:      [ BrowserModule ],
+        declarations: [ HelloWorldComponent ],
+        bootstrap:    [ HelloWorldComponent ],
+        providers:    [ Logger ] // AND THIS
+    })
+    export class AppModule { }
 
 4. Inject the logger into your objects and use it.
 
@@ -42,7 +65,7 @@ This is a work in progress and is not ready for production, use with care, the A
 			...
 		})
 		export class App(){
-			constructor(private _logger:Logger){
+			constructor( private _logger: Logger ){
 				this._logger.error('This is a priority level 1 error message...');
 				this._logger.warn('This is a priority level 2 warning message...');
 				this._logger.info('This is a priority level 3 warning message...');
@@ -65,7 +88,11 @@ In order to see all of the messages you just need to change the logger message h
 
         import {LOG_LOGGER_PROVIDERS} from "angular2-logger/core";
        
-        bootstrap( App, [ LOG_LOGGER_PROVIDERS ]);
+        @NgModule({
+            ...
+            providers:    [ LOG_LOGGER_PROVIDERS ]
+        })
+        export class AppModule { }
 
     The available Providers are:
 
@@ -85,13 +112,16 @@ If you want the logger to keep this setting changed, store it in the localStorag
 
 If the Providers included don't meet your needs you can configure the default logger configuration by Providing custom properties:
 
-    import { Logger, Options, Level } from "angular2-logger/core";
+    import { Logger, Options } from "angular2-logger/core";
 
-    bootstrap(AppComponent,[
-        //<Options> casting is optional, it'll help you with type checking if using an IDE.
-        provide( Options, { useValue: <Options>{ store: false } } ),
-        Logger
-    ]);
+    @NgModule({
+        ...
+        providers:    [ 
+            { provide: Options, useValue: { store: false } },
+            Logger
+        ]
+    })
+    export class AppModule { }
 
 As you can see you don't have to specify all of them, just the ones you want to override.
 
@@ -129,21 +159,27 @@ You can also override the default configuration options by extending the Options
     }
     ...
 
-    // from boot.ts/main.ts
+    // from app.module.ts
     ...
-    bootstrap(AppComponent,[
-        provide( Options,{ useClass: CustomLoggerOptions } ),
-        Logger
-    ]);
-
+    @NgModule({
+        ...
+        providers:    [ 
+            { provide: Options, useClass: CustomLoggerOptions },
+            Logger
+        ]
+    })
+   
 Class names like `Options` and `Level` might be too common, if you get a conflict you can rename them like this:
 
     import { Logger, Options as LoggerOptions, Level as LoggerLevel } from "angular2-logger/core";
 
-    bootstrap(AppComponent,[
-        provide( LoggerOptions,{ useValue: {
-            level: LoggerLevel.WARN,
-            ...
+    @NgModule({
+        ...
+        providers:    [ 
+            { provide: LoggerOptions, useValue: { level: LoggerLevel.WARN } }
+        ]
+    })
+    ...
 
 ## How you can help
 Filing issues is helpful but **pull requests** are even better!
@@ -160,16 +196,23 @@ They are too long so try to keep up, here we go:
 Done.
 
 ## TODOs
-- <del>Add a `Level.OFF` that turns off the logger</del>.
-- <del>Support different loaders and modes</del>.
-- <del>Add a basic demo.</del>
-- <del>Minify bundle.</del>
-- Ability to add logging time to the messages.
-- Lazy Logging.
-- Appenders.
-- Support named loggers.
-- Message Layout Feature.
-- No coding required Dashboard UI to handle loggers.
+- [x] Add a `Level.OFF` that turns off the logger.
+- [x] Support different loaders and modes.
+- [x] Add a basic demo.
+- [x] Minify bundle.
+- [ ] Ability to add logging time to the messages.
+- [ ] Lazy Logging.
+- [ ] Appenders.
+- [ ] Support named loggers.
+- [ ] Message Layout Feature.
+- [ ] No coding required Dashboard UI to handle loggers.
+
+## Breaking changes on 0.4.0
+The codebase was updated to handle the breaking changes on Angular2's Release Candidate 5.
+**Make sure you don't upgrade to this version if you haven't upgraded Angular2 to at least `2.0.0-rc.5`**
+
+- Quickstart guide now follows the pattern in Angular 2's Quickstart to add the references to other libs in `systemjs.config.js`. 
+However if you still want to do it the old way by adding the system bundle, you can still do so, except now its called `bundles/angular2-logger.sys.min.js`. 
 
 ## Breaking changes on 0.3.0
 The codebase was updated to handle the breaking changes on Angular2's Release Candidate.
