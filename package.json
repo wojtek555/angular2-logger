@@ -2,7 +2,6 @@
   "name": "angular2-logger",
   "version": "0.3.0",
   "description": "A Log4j inspired Logger for Angular 2.",
-  "main": "bundles/angular-logger.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/code-chunks/angular2-logger"
@@ -14,7 +13,7 @@
     "tslint": "tslint *.ts src/**/*.ts",
     "lint": "npm run tslint",
     "prepublish": "npm run build",
-    "clean": "rimraf *.js *.map *.d.ts app/**/*.js app/**/*.map app/**/*.d.ts demos/*/app**/*.js demos/*/app/*.map demos/*/app/*.d.ts dist bundles",
+    "clean": "rimraf *.js *.map app/**/*.js app/**/*.map app/**/*.d.ts demos/*/app**/*.js demos/*/app/*.map demos/*/app/*.d.ts dist bundles",
     "precompile": "typings install",
     "compile": "npm run compile:es5 && npm run compile:sys && npm run compile:es6",
     "compile:amd": "tsc -p tsconfig-amd.json",
@@ -98,5 +97,7 @@
     "@angular/core": "2.0.0-rc.5",
     "@angular/platform-browser": "2.0.0-rc.5",
     "@angular/platform-browser-dynamic": "2.0.0-rc.5"
-  }
+  },
+  "typings": "core.d.ts",
+  "main": "core.js"
 }

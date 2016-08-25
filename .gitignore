@@ -16,7 +16,7 @@ bundles
 
 /*.js
 /*.js.map
-/*.d.ts
+#/*.d.ts
 
 app/**/*.js
 app/**/*.js.map

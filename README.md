@@ -18,7 +18,7 @@ This is a work in progress and is not ready for production, use with care, the A
 
 1. Install the npm module.
     
-		npm install --save angular2-logger
+        npm install --save angular2-logger
 
 2. Add the `angular2-logger` library to your app. If you are following the [Angular 2's Quickstart Guide](https://angular.io/docs/ts/latest/quickstart.html) it should be something like this:
 
@@ -44,20 +44,19 @@ In `systemjs.config.js`:
 3. Setup the Provider.
     
     In `app.module.ts`:
+
+        import { NgModule }      from '@angular/core';
+        import { BrowserModule } from '@angular/platform-browser';
+        import { HelloWorldComponent }  from './app.component';
+        import { Logger } from "angular2-logger/core"; // ADD THIS
     
-
-    import { NgModule }      from '@angular/core';
-    import { BrowserModule } from '@angular/platform-browser';
-    import { HelloWorldComponent }  from './app.component';
-    import { Logger } from "angular2-logger/core"; // ADD THIS
-
-    @NgModule({
-        imports:      [ BrowserModule ],
-        declarations: [ HelloWorldComponent ],
-        bootstrap:    [ HelloWorldComponent ],
-        providers:    [ Logger ] // AND THIS
-    })
-    export class AppModule { }
+        @NgModule({
+            imports:      [ BrowserModule ],
+            declarations: [ HelloWorldComponent ],
+            bootstrap:    [ HelloWorldComponent ],
+            providers:    [ Logger ] // AND THIS
+        })
+        export class AppModule { }
 
 4. Inject the logger into your objects and use it.
 
@@ -206,6 +205,7 @@ Done.
 - [ ] Support named loggers.
 - [ ] Message Layout Feature.
 - [ ] No coding required Dashboard UI to handle loggers.
+- [ ] Automatize definition files. Waiting for https://github.com/Microsoft/TypeScript/issues/4433 .
 
 ## Breaking changes on 0.4.0
 The codebase was updated to handle the breaking changes on Angular2's Release Candidate 5.
