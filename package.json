@@ -94,6 +94,5 @@
     "@angular/platform-browser": "2.0.0-rc.5",
     "@angular/platform-browser-dynamic": "2.0.0-rc.5"
   },
-  "typings": "core.d.ts",
   "main": "core.js"
 }
