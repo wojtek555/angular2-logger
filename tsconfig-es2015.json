@@ -3,6 +3,7 @@
 
     "emitDecoratorMetadata": true,
 
+    "removeComments": true,
     "declaration": true,
     "experimentalDecorators": true,
     "module": "es2015",

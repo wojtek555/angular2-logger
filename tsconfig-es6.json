@@ -2,6 +2,7 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "removeComments": true,
     "moduleResolution": "node",
     "outDir": "./dist/es6",
     "rootDir": ".",
