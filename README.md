@@ -18,28 +18,29 @@ This is a work in progress and is not ready for production, use with care, the A
 
 1. Install the npm module.
     
-        npm install --save angular2-logger
+	npm install --save angular2-logger
 
 2. Add the `angular2-logger` library to your app. If you are following the [Angular 2's Quickstart Guide](https://angular.io/docs/ts/latest/quickstart.html) it should be something like this:
 
-In `systemjs.config.js`:
- 
-    // map tells the System loader where to look for things
-    var map = {
-        'app':                        'app', // 'dist',
-        '@angular':                   'node_modules/@angular',
-        'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
-        'rxjs':                       'node_modules/rxjs',
-        'angular2-logger':            'node_modules/angular2-logger' // ADD THIS
-    };
-    
-    //packages tells the System loader how to load when no filename and/or no extension
-    var packages = {
-        'app':                        { main: 'main.ts',  defaultExtension: 'ts' },
-        'rxjs':                       { defaultExtension: 'js' },
-        'angular2-in-memory-web-api': { defaultExtension: 'js' },
-        'angular2-logger':            { defaultExtension: 'js' }, // AND THIS
-    };
+	In `systemjs.config.js`:
+	
+		// map tells the System loader where to look for things
+		var map = {
+			'app':                        'app', // 'dist',
+			'@angular':                   'node_modules/@angular',
+			'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
+			'rxjs':                       'node_modules/rxjs',
+			'angular2-logger':            'node_modules/angular2-logger' // ADD THIS
+		};
+		
+		//packages tells the System loader how to load when no filename and/or no extension
+		var packages = {
+			'app':                        { main: 'main.ts',  defaultExtension: 'ts' },
+			'rxjs':                       { defaultExtension: 'js' },
+			'angular2-in-memory-web-api': { defaultExtension: 'js' },
+			'angular2-logger':            { defaultExtension: 'js' }, // AND THIS
+		};
+
 
 3. Setup the Provider.
     
