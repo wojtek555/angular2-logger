@@ -47,13 +47,13 @@ In `systemjs.config.js`:
 
         import { NgModule }      from '@angular/core';
         import { BrowserModule } from '@angular/platform-browser';
-        import { HelloWorldComponent }  from './app.component';
+        import { AppComponent }  from './app.component';
         import { Logger } from "angular2-logger/core"; // ADD THIS
     
         @NgModule({
             imports:      [ BrowserModule ],
-            declarations: [ HelloWorldComponent ],
-            bootstrap:    [ HelloWorldComponent ],
+            declarations: [ AppComponent ],
+            bootstrap:    [ AppComponent ],
             providers:    [ Logger ] // AND THIS
         })
         export class AppModule { }
@@ -63,7 +63,7 @@ In `systemjs.config.js`:
 		@Component({
 			...
 		})
-		export class App(){
+		export class AppComponent(){
 			constructor( private _logger: Logger ){
 				this._logger.error('This is a priority level 1 error message...');
 				this._logger.warn('This is a priority level 2 warning message...');
