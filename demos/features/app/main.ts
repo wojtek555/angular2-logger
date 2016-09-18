@@ -1,5 +1,6 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {LoggerAppComponent} from "./logger-app.component";
-import {Logger} from "angular2-logger/core";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-bootstrap( LoggerAppComponent,[ Logger ]);
+import { AppModule } from './app.module';
+
+const platform = platformBrowserDynamic();
+platform.bootstrapModule( AppModule );

@@ -215,14 +215,6 @@ The codebase was updated to handle the breaking changes on Angular2's Release Ca
 - Quickstart guide now follows the pattern in Angular 2's Quickstart to add the references to other libs in `systemjs.config.js`. 
 However if you still want to do it the old way by adding the system bundle, you can still do so, except now its called `bundles/angular2-logger.sys.min.js`. 
 
-## Breaking changes on 0.3.0
-The codebase was updated to handle the breaking changes on Angular2's Release Candidate.
-
-**Make sure you don't upgrade to this version if you haven't upgraded Angular2 to at least `2.0.0-rc.0`**
-
-## Breaking changes on 0.2.0
-The setup changed a bit to make it easier so make sure you follow up the new Quickstart.
-
 ## LICENSE
 
 [MIT](https://opensource.org/licenses/MIT)
