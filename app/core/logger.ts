@@ -5,7 +5,7 @@ import {Level} from "./level";
  * Logger options.
  * See {@link Logger}.
  *
- * level - How much detail you want to see in the logs, 1 being the less detailed, 5 being the most. Defaults to WARN.
+ * level - How much detail you want to see in the logs, 0 being off, 1 being the less detailed, 5 being the most. Defaults to WARN.
  * global - Whether you want the created logger object to be exposed in the global scope. Defaults to true.
  * globalAs - The window's property name that will hold the logger object created. Defaults to 'logger'.
  * store - Whether you want the level config to be saved in the local storage so it doesn't get lost when you refresh. Defaults to false.
@@ -59,7 +59,8 @@ export class Logger {
 
     }
 
-    private _loadLevel = (): Level => localStorage.getItem( this._storeAs );
+    private _loadLevel = (): Level => Level[localStorage.getItem( this._storeAs ) as string];
+
     private _storeLevel(level: Level) { localStorage[ this._storeAs ] = level; }
 
     error(message?: any, ...optionalParams: any[]) {
