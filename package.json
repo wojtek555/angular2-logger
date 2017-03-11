@@ -82,7 +82,7 @@
     "@angular/platform-browser": "2.4.5",
     "@angular/platform-browser-dynamic": "2.4.5",
     "core-js": "^2.4.1",
-    "rxjs": "5.0.1",
+    "rxjs": "5.2.0",
     "systemjs": "0.19.41",
     "zone.js": "^0.7.4"
   },
